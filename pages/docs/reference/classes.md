@@ -139,8 +139,8 @@ The class can also declare **secondary constructors**, which are prefixed with *
 
 ```kotlin
 class Person {
-    var children: MutableList<Person> = mutableListOf<Person>();
-    constructor(parent: Person) {
+    var children: MutableList<Person> = mutableListOf<Person>() //TODO Fix: mutableList of Person is the same as class type
+    constructor(parent: Person) { //TODO Fix: a Person instance is passed in the Person class
         parent.children.add(this)
     }
 }
@@ -156,8 +156,8 @@ is done using the *this*{: .keyword } keyword:
 
 ```kotlin
 class Person(val name: String) {
-    var children: MutableList<Person> = mutableListOf<Person>();
-    constructor(name: String, parent: Person) : this(name) {
+    var children: MutableList<Person> = mutableListOf<Person>() //TODO Fix: mutableList of Person is the same as class type
+    constructor(name: String, parent: Person) : this(name) { //TODO Fix: a Person instance is passed in the Person class
         parent.children.add(this)
     }
 }
